@@ -13,23 +13,23 @@ data class RuleSet(
 )
 
 data class MoveRequest(
-        var game: Game,
+        var game: Game?,
         var ruleset: RuleSet?,
-        var turn: Int,
-        var board: Board,
-        var you: Snake,
+        var turn: Int?,
+        var board: Board?,
+        var you: Snake?,
 )
 
 class Snake(
-        var id: String,
-        var name: String,
-        var health: Int,
-        var body: Array<Location>,
-        var latency: String,
-        var head: Location,
-        var length: Int,
-        var shout: String,
-        var squad: String,
+        var id: String?,
+        var name: String?,
+        var health: Int?,
+        var body: Array<Location>?,
+        var latency: String?,
+        var head: Location?,
+        var length: Int?,
+        var shout: String?,
+        var squad: String?,
 )
 
 class Location(
@@ -39,7 +39,7 @@ class Location(
 
 class Board(
         var height: Int,
-        var Width: Int,
+        var width: Int,
         var food: Array<Location>,
         var hazard: Array<Location>,
         var snakes: Array<Snake>,

@@ -2,6 +2,7 @@ package com.duda.battlesnake
 
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RestController
+import kotlin.random.Random
 
 @RestController
 class GameRestApi {
@@ -12,7 +13,9 @@ class GameRestApi {
 
     @PostMapping("/move")
     fun move(moveRequest: MoveRequest): MoveRes {
-        return MoveRes("up")
+        val directions = listOf("up", "down", "left", "right")
+        val direction = directions[Random.nextInt(directions.size)]
+        return MoveRes(direction)
     }
 
     @PostMapping("/end")
